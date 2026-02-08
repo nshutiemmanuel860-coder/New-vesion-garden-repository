@@ -93,6 +93,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 img {
@@ -189,6 +190,7 @@ section {
     margin-bottom: var(--spacing-xl);
     position: relative;
     top: 40px;
+    padding: 45px 0;
 }
 
 /* Button Styles - Enhanced */
@@ -324,7 +326,6 @@ header {
     font-weight: 600;
     position: relative;
     color: var(--text-primary);
-    padding: 12px 0;
     text-decoration: none;
 }
 
