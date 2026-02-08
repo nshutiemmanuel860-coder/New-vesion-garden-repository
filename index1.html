@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gardens - Professional gardening boxes and resources for beginners and experts across Europe, Asia, and New Zealand">
+    <title>Gardens | Professional Gardening Boxes & Resources</title>
+    <link rel="icon" href="flower.gif">
+    
+    <!-- SEO and Accessibility Meta Tags -->
+    <meta name="keywords" content="gardening, subscription boxes, gardening resources, sustainable gardening, beginner gardening">
+    <meta name="author" content="Gardens Company">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gardens",
+        "description": "Professional gardening company providing subscription boxes and gardening resources",
+        "url": "https://gardens-website.com",
+        "logo": "https://gardens-website.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+44 (0)20 7123 4567",
+            "contactType": "Customer Service",
+            "areaServed": ["EU", "AS", "NZ"],
+            "availableLanguage": ["English"]
+        }
+    }
+    </script>
+</head>
+<body class="light-mode">
+    <!-- Skip to Main Content Link for Screen Readers -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Header & Navigation -->
+    <header role="banner">
+        <div class="container header-container">
+            <a href="#" class="logo" onclick="showPage('home')" aria-label="Gardens Home">
+                <i class="fas fa-leaf" aria-hidden="true"></i>
+                Gardens<span class="sr-only">.</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" onclick="showPage('home')" aria-current="page">Home</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('boxes')">Our Boxes</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('activities')">Resources & Events</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('about')">About</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('faq')">FAQ</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('contact')">Contact</a></li>
+                    <li class="theme-toggle-container">
+                        <span class="theme-label">Theme:</span>
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme between light, dark, and green modes">
+                            <i class="fas fa-sun" aria-hidden="true"></i>
+                            <span class="sr-only">Light Mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileNav">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <span class="sr-only">Menu</span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link active" onclick="showPage('home')">Home</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" onclick="showPage('boxes')">Our Boxes</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" onclick="showPage('activities')">Resources & Events</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" onclick="showPage('about')">About</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" onclick="showPage('faq')">FAQ</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" onclick="showPage('contact')">Contact</a></li>
+                <li class="mobile-nav-item mobile-theme-toggle">
+                    <span class="mobile-theme-label">Theme:</span>
+                    <div class="mobile-theme-buttons">
+                        <button class="mobile-theme-btn active" data-theme="light" onclick="setTheme('light')">
+                            <i class="fas fa-sun" aria-hidden="true"></i> Light
+                        </button>
+                        <button class="mobile-theme-btn" data-theme="dark" onclick="setTheme('dark')">
+                            <i class="fas fa-moon" aria-hidden="true"></i> Dark
+                        </button>
+                        <button class="mobile-theme-btn" data-theme="green" onclick="setTheme('green')">
+                            <i class="fas fa-leaf" aria-hidden="true"></i> Green
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Home Page -->
+        <div id="home-page" class="page-content active">
+            <section class="hero" aria-labelledby="hero-heading">
+                <div class="container">
+                    <h1 id="hero-heading">Green Isn't a Trend, It's a Generation</h1>
+                    <p>Designed by gardening experts for less work and more joy across residential, community, & corporate gardens.</p>
+                    <a href="#" class="btn btn-primary" onclick="showPage('contact')" aria-label="Build a Gardens Plan">Build a Gardens Plan</a>
+                </div>
+            </section>
+            
+            <!-- Product Chooser Quiz -->
+            <section class="product-chooser" aria-labelledby="chooser-heading">
+                <div class="container">
+                    <h2 id="chooser-heading" class="section-title">Which Gardening Box is Right for You?</h2>
+                    <div class="chooser-container">
+                        <div class="chooser-question active" id="question1">
+                            <h3>What's your gardening experience level?</h3>
+                            <div class="chooser-options">
+                                <button class="chooser-option" data-answer="beginner" onclick="nextQuestion(2, 'beginner')">
+                                    <i class="fas fa-seedling" aria-hidden="true"></i>
+                                    <span>Beginner - Just starting out</span>
+                                </button>
+                                <button class="chooser-option" data-answer="intermediate" onclick="nextQuestion(2, 'intermediate')">
+                                    <i class="fas fa-leaf" aria-hidden="true"></i>
+                                    <span>Intermediate - Some experience</span>
+                                </button>
+                                <button class="chooser-option" data-answer="expert" onclick="nextQuestion(2, 'expert')">
+                                    <i class="fas fa-tree" aria-hidden="true"></i>
+                                    <span>Expert - Confident gardener</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="chooser-question" id="question2">
+                            <h3>What are you most interested in growing?</h3>
+                            <div class="chooser-options">
+                                <button class="chooser-option" data-answer="vegetables" onclick="nextQuestion(3, 'vegetables')">
+                                    <i class="fas fa-carrot" aria-hidden="true"></i>
+                                    <span>Fresh vegetables</span>
+                                </button>
+                                <button class="chooser-option" data-answer="flowers" onclick="nextQuestion(3, 'flowers')">
+                                    <i class="fas fa-spa" aria-hidden="true"></i>
+                                    <span>Beautiful flowers</span>
+                                </button>
+                                <button class="chooser-option" data-answer="mixed" onclick="nextQuestion(3, 'mixed')">
+                                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                                    <span>A mix of both</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="chooser-result" id="chooserResult">
+                            <h3>We Recommend: <span id="recommendedBox"></span></h3>
+                            <p id="recommendationReason"></p>
+                            <a href="#" class="btn btn-success" onclick="showPage('boxes')">View Recommended Box</a>
+                            <button class="btn btn-outline" onclick="restartChooser()">Start Over</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="stats" aria-label="Company statistics">
+                <div class="container stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number">97%</span>
+                        <span class="stat-label">Customer Satisfaction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Years of Expertise</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2.9k+</span>
+                        <span class="stat-label">Projects Done</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="features" aria-labelledby="features-heading">
+                <div class="container">
+                    <h2 id="features-heading" class="section-title">A Greener Garden With Less Work</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf" aria-hidden="true"></i>
+                            </div>
+                            <h3>Lush, Dense Results</h3>
+                            <p>Achieve eye-catching garden appeal with thick-growing plants that crowd out common garden weeds naturally.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-tint" aria-hidden="true"></i>
+                            </div>
+                            <h3>30% Less Water</h3>
+                            <p>Maintain lush, thriving plants with just a fraction of the water needed compared to conventional methods.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <h3>50% Less Maintenance</h3>
+                            <p>Enjoy a beautiful garden while spending less time maintaining it. Our systems are designed for efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Boxes Page -->
+        <div id="boxes-page" class="page-content">
+            <section class="products" aria-labelledby="products-heading">
+                <div class="container">
+                    <h2 id="products-heading" class="section-title">Our Gardening Boxes</h2>
+                    <p class="text-center mb-xl">Choose from our carefully curated selection of gardening boxes.</p>
+                    
+                    <div class="product-tabs" id="productTabs" role="tablist" aria-label="Filter products by type">
+                        <button class="tab-btn active" onclick="filterProducts('all')" role="tab" aria-selected="true">All Boxes</button>
+                        <button class="tab-btn" onclick="filterProducts('oddbox')" role="tab" aria-selected="false">Oddbox</button>
+                        <button class="tab-btn" onclick="filterProducts('flourish')" role="tab" aria-selected="false">Flourish</button>
+                        <button class="tab-btn" onclick="filterProducts('cottage')" role="tab" aria-selected="false">Cottage</button>
+                        <button class="tab-btn" onclick="filterProducts('custom')" role="tab" aria-selected="false">Custom</button>
+                    </div>
+                    
+                    <div class="products-container" id="productsContainer" role="region" aria-label="Products listing">
+                        <!-- Product cards will be loaded here -->
+                    </div>
+                    
+                    <div class="text-center mt-xl">
+                        <p class="mb-md">Elevate your gardening project now. Get ready to experience the transformative power of Gardens.</p>
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact')">Get in Touch</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Activities Page -->
+        <div id="activities-page" class="page-content">
+            <section class="activities" aria-labelledby="activities-heading">
+                <div class="container">
+                    <h2 id="activities-heading" class="section-title">Gardening Resources & Events</h2>
+                    <p class="text-center mb-xl">Join our community activities designed to inspire, educate, and connect gardeners.</p>
+                    
+                    <div class="activities-filter" role="group" aria-label="Filter activities by type">
+                        <button class="filter-btn active" onclick="filterActivities('all')">All Activities</button>
+                        <button class="filter-btn" onclick="filterActivities('events')">Events</button>
+                        <button class="filter-btn" onclick="filterActivities('resources')">Resources</button>
+                        <button class="filter-btn" onclick="filterActivities('community')">Community</button>
+                    </div>
+                    
+                    <div class="activities-container">
+                        <div class="activity-card" data-category="events">
+                            <div class="activity-icon">
+                                <i class="fas fa-door-open" aria-hidden="true"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3>Open Gardens</h3>
+                                <p>Visit inspiring gardens in your area and learn from experienced gardeners. Monthly events across regions.</p>
+                                <span class="activity-tag"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Monthly Events</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card" data-category="resources">
+                            <div class="activity-icon">
+                                <i class="fas fa-tasks" aria-hidden="true"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3>Seasonal Checklists</h3>
+                                <p>Monthly gardening tasks and checklists tailored to your region and garden type.</p>
+                                <span class="activity-tag"><i class="fas fa-file-alt" aria-hidden="true"></i> Free Download</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card" data-category="community">
+                            <div class="activity-icon">
+                                <i class="fas fa-camera" aria-hidden="true"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3>Photo Competitions</h3>
+                                <p>Enter your garden photos in our monthly competitions. Win prizes and get featured.</p>
+                                <span class="activity-tag"><i class="fas fa-trophy" aria-hidden="true"></i> Prizes Available</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card" data-category="resources">
+                            <div class="activity-icon">
+                                <i class="fas fa-seedling" aria-hidden="true"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3>Greenhouse Tips</h3>
+                                <p>Expert advice for greenhouse gardening, temperature control, and seasonal planting.</p>
+                                <span class="activity-tag"><i class="fas fa-lightbulb" aria-hidden="true"></i> Expert Tips</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card" data-category="events">
+                            <div class="activity-icon">
+                                <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3>Online Advice Talks</h3>
+                                <p>Live Q&A sessions with gardening experts. Get personalized advice for your garden.</p>
+                                <span class="activity-tag"><i class="fas fa-video" aria-hidden="true"></i> Live Sessions</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-card" data-category="community">
+                            <div class="activity-icon">
+                                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h3>Seasonal Surveys</h3>
+                                <p>Participate in our gardening community surveys and help shape future gardening trends.</p>
+                                <span class="activity-tag"><i class="fas fa-users" aria-hidden="true"></i> Community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- About Page -->
+        <div id="about-page" class="page-content">
+            <section class="about" aria-labelledby="about-heading">
+                <div class="container">
+                    <h2 id="about-heading" class="section-title">About Gardens</h2>
+                    <div class="contact-container">
+                        <div>
+                            <h3>Our Mission</h3>
+                            <p>Gardens was founded to make sustainable, productive gardening accessible to everyone, regardless of experience level or available space.</p>
+                            <p>We believe that growing your own food and creating beautiful green spaces shouldn't require endless hours of work or deep horticultural knowledge.</p>
+                            <p>With operations across Europe, Asia, and New Zealand, we bring local expertise to our global community of gardeners.</p>
+                            
+                            <h3 class="mt-lg">Our Expertise</h3>
+                            <p>Our team includes horticulturists with 20+ years of experience, sustainable agriculture experts, and garden designers who understand what makes gardens thrive in different climates and conditions.</p>
+                        </div>
+                        
+                        <div>
+                            <img src="gardening team.avif" alt="Gardening team working together in a greenhouse" style="border-radius: var(--border-radius);">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- FAQ Page -->
+        <div id="faq-page" class="page-content">
+            <section class="faq-section" aria-labelledby="faq-heading">
+                <div class="container">
+                    <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+                    <div class="faq-container" id="faqContainer">
+                        <!-- FAQ will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Contact Page -->
+        <div id="contact-page" class="page-content">
+            <section class="contact" aria-labelledby="contact-heading">
+                <div class="container">
+                    <h2 id="contact-heading" class="section-title">Get in Touch</h2>
+                    
+                    <div class="contact-tabs" role="tablist" aria-label="Contact form options">
+                        <button class="contact-tab active" onclick="showContactForm('general')" role="tab" aria-selected="true">General Inquiry</button>
+                        <button class="contact-tab" onclick="showContactForm('corporate')" role="tab" aria-selected="false">Corporate Inquiry</button>
+                    </div>
+                    
+                    <div class="contact-container">
+                        <!-- General Contact Form -->
+                        <div class="contact-form active" id="generalForm" role="tabpanel" aria-labelledby="general-tab">
+                            <div class="contact-info">
+                                <h3>Contact Information</h3>
+                                <p>Have questions about our gardening boxes or services? We're here to help you create the garden of your dreams.</p>
+                                
+                                <div class="contact-details">
+                                    <div class="contact-detail">
+                                        <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+                                        <div>
+                                            <h4>Our Location</h4>
+                                            <p>123 Greenway Road<br>Garden City, GC1 2AB<br>United Kingdom</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-detail">
+                                        <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                                        <div>
+                                            <h4>Phone Number</h4>
+                                            <p>+44 (0)20 7123 4567</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-detail">
+                                        <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                                        <div>
+                                            <h4>Email Address</h4>
+                                            <p>info@gardens.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <form id="generalContactForm" class="contact-form-main">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" id="name" class="form-control" required aria-required="true">
+                                    <span class="form-hint">Please enter your full name</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" class="form-control" required aria-required="true">
+                                    <span class="form-hint">We'll never share your email with anyone else</span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="interest" class="form-label">I'm interested in *</label>
+                                    <select id="interest" class="form-control" required aria-required="true">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="oddbox">Oddbox - Wonky Vegetables</option>
+                                        <option value="flourish">Flourish - Seasonal Collections</option>
+                                        <option value="cottage">Cottage - Wildflower Garden</option>
+                                        <option value="general">General Inquiry</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea id="message" class="form-control" required aria-required="true"></textarea>
+                                    <span class="form-hint">Please provide details about your inquiry</span>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Corporate Contact Form -->
+                        <div class="contact-form" id="corporateForm" role="tabpanel" aria-labelledby="corporate-tab" hidden>
+                            <div class="corporate-info">
+                                <h3><i class="fas fa-building" aria-hidden="true"></i> Corporate & Bulk Gift Solutions</h3>
+                                <p>Looking for custom gift boxes for your team or corporate clients? Our tailored solutions are perfect for:</p>
+                                <ul class="corporate-benefits">
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Employee wellness programs</li>
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Corporate gifting</li>
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Client appreciation gifts</li>
+                                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sustainability initiatives</li>
+                                </ul>
+                            </div>
+                            
+                            <form id="corporateContactForm" class="contact-form-main">
+                                <div class="form-group">
+                                    <label for="companyName" class="form-label">Company Name *</label>
+                                    <input type="text" id="companyName" class="form-control" required aria-required="true">
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group half">
+                                        <label for="contactPerson" class="form-label">Contact Person *</label>
+                                        <input type="text" id="contactPerson" class="form-control" required aria-required="true">
+                                    </div>
+                                    
+                                    <div class="form-group half">
+                                        <label for="position" class="form-label">Position</label>
+                                        <input type="text" id="position" class="form-control">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="corporateEmail" class="form-label">Business Email *</label>
+                                    <input type="email" id="corporateEmail" class="form-control" required aria-required="true">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="boxQuantity" class="form-label">Estimated Quantity *</label>
+                                    <select id="boxQuantity" class="form-control" required aria-required="true">
+                                        <option value="" disabled selected>Select quantity range</option>
+                                        <option value="10-25">10 - 25 boxes</option>
+                                        <option value="26-100">26 - 100 boxes</option>
+                                        <option value="101-500">101 - 500 boxes</option>
+                                        <option value="500+">500+ boxes</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="occasion" class="form-label">Occasion / Purpose *</label>
+                                    <select id="occasion" class="form-control" required aria-required="true">
+                                        <option value="" disabled selected>Select occasion</option>
+                                        <option value="holiday">Holiday Gifts</option>
+                                        <option value="employee">Employee Appreciation</option>
+                                        <option value="client">Client Gifts</option>
+                                        <option value="wellness">Wellness Program</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="budget" class="form-label">Budget Range (per box)</label>
+                                    <select id="budget" class="form-control">
+                                        <option value="" selected>Select budget</option>
+                                        <option value="15-25">£15 - £25</option>
+                                        <option value="26-40">£26 - £40</option>
+                                        <option value="41-60">£41 - £60</option>
+                                        <option value="60+">£60+</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="corporateMessage" class="form-label">Additional Requirements</label>
+                                    <textarea id="corporateMessage" class="form-control" placeholder="Please provide any specific requirements, timelines, or customization needs..."></textarea>
+                                </div>
+                                
+                                <div class="form-group file-upload">
+                                    <label for="moodboard" class="form-label">Upload Mood Board or Reference (Optional)</label>
+                                    <input type="file" id="moodboard" class="form-control" accept="image/*,.pdf">
+                                    <span class="file-hint">Maximum file size: 5MB (JPEG, PNG, PDF)</span>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i> Request Corporate Quote
+                                </button>
+                                <p class="form-note">We'll contact you within 24 hours to discuss your corporate requirements</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf" aria-hidden="true"></i>
+                        Gardens<span class="sr-only">.</span>
+                    </div>
+                    <p>Making sustainable, productive gardening accessible to everyone. Join our community of gardeners across the globe.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.youtube.com" title="Youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel"><i class="fab fa-youtube social-icon" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com" title="Instagram" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page"><i class="fab fa-instagram social-icon" aria-hidden="true"></i></a>
+                        <a href="https://x.com" title="Twitter" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter page"><i class="fab fa-twitter social-icon" aria-hidden="true"></i></a>
+                        <a href="https://pinterest.com" title="Pinterest" target="_blank" rel="noopener noreferrer" aria-label="Visit our Pinterest page"><i class="fab fa-pinterest social-icon" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('boxes')">Our Boxes</a></li>
+                        <li><a href="#" onclick="showPage('activities')">Resources & Events</a></li>
+                        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Boxes</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPage('boxes'); filterProducts('all')">All Boxes</a></li>
+                        <li><a href="#" onclick="showPage('boxes'); filterProducts('oddbox')">Oddbox</a></li>
+                        <li><a href="#" onclick="showPage('boxes'); filterProducts('flourish')">Flourish</a></li>
+                        <li><a href="#" onclick="showPage('boxes'); filterProducts('cottage')">Cottage</a></li>
+                        <li><a href="#" onclick="showPage('boxes'); filterProducts('custom')">Custom</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Gardens. All rights reserved. | <a href="#" onclick="showPage('privacy')">Privacy Policy</a> | <a href="#" onclick="showPage('terms')">Terms of Service</a></p>
+                <p class="accessibility-statement">This website is designed to be accessible to all users, including those with disabilities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>
