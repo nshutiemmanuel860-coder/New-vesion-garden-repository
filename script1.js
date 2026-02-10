@@ -101,6 +101,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// JavaScript addition for improved mobile navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+});
+
+
 function setTheme(theme) {
     event?.preventDefault();
     
